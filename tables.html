@@ -15,8 +15,8 @@
             <h1 class="display-4">View Reservations</h1>
             <p class="lead">See all of the tables you can't afford.</p>
             <hr class="my-4">
-            <a class="btn btn-primary btn-lg" href="#" role="button">Home</a>
-            <a class="btn btn-danger btn-lg" href="#" role="button">Make a Reservation</a>
+            <a class="btn btn-primary btn-lg" href="/" role="button">Home</a>
+            <a class="btn btn-danger btn-lg" href="/make" role="button">Make a Reservation</a>
         </div>
         <div class="row">
             <div class="col-sm-12" id="tables"></div>
@@ -25,7 +25,7 @@
             <div class="col-sm-12" id="waitingList"></div>
         </div>
         <div class="footer">
-            <p><a href="#">API Table Link</a>  |  <a href="#">API Wait List</a></p>
+            <p><a href="/api/table-link">API Table Link</a>  |  <a href="/api/waiting-list">API Wait List</a></p>
         </div>
     </div>
     
@@ -38,5 +38,18 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+    <script>
+        $.get("/api/table-link")
+                .then(function (data) {
+                    console.log(data);
+                });
+            ;
+        $.get("/api/waiting-list")
+            .then(function (data) {
+                console.log(data);
+            });
+    </script>
 </body>
 </html>
